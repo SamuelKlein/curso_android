@@ -1,12 +1,13 @@
 language: android
 
+env:
+  - JDK=oraclejdk8
+  - JDK=openjdk8
 dist: trusty
+before_script:
+  - jdk_switcher use $JDK
+  - chmod +x gradlew
 
-jdk:
-  - openjdk8
-
-before_install:
- - chmod +x gradlew
  
  
 android:

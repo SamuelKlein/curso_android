@@ -2,7 +2,6 @@ language: android
 
 before_script:
   - sudo apt-get install openjdk-8-jre-headless
-  - jdk_switcher use $JDK
   - chmod +x gradlew
 
  

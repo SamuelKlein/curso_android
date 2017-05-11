@@ -201,6 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="dialogtext"
                 android:text="Button" />
 
             <Button
@@ -208,6 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="dialogList"
                 android:text="Button" />
 
             <Button
@@ -215,6 +217,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="dialogView"
                 android:text="Button" />
         </LinearLayout>
 

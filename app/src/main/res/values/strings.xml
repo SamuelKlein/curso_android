@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Teste APP</string>
+    <string name="title">Titulo</string>
+    <string name="content">Conteudo</string>
+    <string name="agree">Ok</string>
+    <string name="positive">Positivo</string>
+
+    <string-array name="minhaLista">
+        <item value="testes1">asdaskljdfhsadkjfhsafkjlsdhfdkfjasdf</item>
+        <item value="testes2">asdaskljdfhsadkjfhsafkjlsdhfdkfjasdf</item>
+        <item value="testes3">asdaskljdfhsadkjfhsafkjlsdhfdkfjasdf</item>
+        <item value="testes4">asdaskljdfhsadkjfhsafkjlsdhfdkfjasdf</item>
+        <item value="testes5">asdaskljdfhsadkjfhsafkjlsdhfdkfjasdf</item>
+        <item value="testes6">asdaskljdfhsadkjfhsafkjlsdhfdkfjasdf</item>
+
+    </string-array>
+
 </resources>

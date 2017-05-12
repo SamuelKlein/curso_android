@@ -10,12 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ExemploInterface"></activity>
-        <activity android:name=".activity.LoginActivity">
-
-        </activity>
+        <activity android:name=".ExemploInterface" />
+        <activity android:name=".activity.LoginActivity"></activity>
         <activity android:name=".activity.UsuarioActivity" />
         <activity android:name=".activity.FacesActivity">
+
+        </activity>
+        <activity android:name=".activity.MainInstaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -10,6 +10,16 @@ public class Usuario {
     private String senha;
     private String descricao;
 
+    public Usuario() {
+
+    }
+
+    public Usuario(String usuario, String senha, String descricao) {
+        this.usuario = usuario;
+        this.senha = senha;
+        this.descricao = descricao;
+    }
+
     public String getUsuario() {
         return usuario;
     }

@@ -3,6 +3,7 @@ package target.aula.cursoandroid;
 import android.net.http.HttpResponseCache;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -25,7 +26,16 @@ public class Comunicacao {
 
         Response response = client.newCall(request).execute();
 
-        return response.body().toString();
+        return response.body().string();
+    }
+
+    public InputStream getInputStream(String url) throws IOException {
+        Request request = new Request.Builder().url(url)
+                .build();
+
+        Response response = client.newCall(request).execute();
+
+        return response.body().byteStream();
     }
 
 }

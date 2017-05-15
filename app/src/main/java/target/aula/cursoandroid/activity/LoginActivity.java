@@ -34,8 +34,8 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, UsuarioActivity.class);
                 Usuario usuario = new Usuario();
                 usuario.setUsuario(editText.getText().toString());
-                usuario.setDescricao("Seilah");
-                usuario.setSenha("asdfsafdfsfsdaf");
+//                usuario.setDescricao("Seilah");
+//                usuario.setSenha("asdfsafdfsfsdaf");
                 intent.putExtra("usuario", new Gson().toJson(usuario));
                 startActivity(intent);
             }

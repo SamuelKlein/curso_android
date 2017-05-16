@@ -103,11 +103,11 @@
         android:background="@android:color/darker_gray"
         android:cropToPadding="false"
         android:scaleType="fitXY"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/silvio03" />
+        app:srcCompat="@android:drawable/stat_notify_error" />
 
 
 </android.support.constraint.ConstraintLayout>

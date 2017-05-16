@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "180982992125",
+    "firebase_url": "https://meupogeto.firebaseio.com",
+    "project_id": "meupogeto",
+    "storage_bucket": "meupogeto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180982992125:android:8841e45f1c93d58d",
+        "android_client_info": {
+          "package_name": "target.aula.cursoandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180982992125-ov3krf702eoj8idne3dn6nfjuf8cco78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCriQRpWpmOIdcI5IsGIGoEWQ6Ryn8jWoQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

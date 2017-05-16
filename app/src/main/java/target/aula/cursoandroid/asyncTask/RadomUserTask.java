@@ -1,26 +1,21 @@
 package target.aula.cursoandroid.asyncTask;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import target.aula.cursoandroid.Comunicacao;
-import target.aula.cursoandroid.ed.Usuario;
+import target.aula.cursoandroid.ed.RandomUsers;
+import target.aula.cursoandroid.ed.Result;
 
 /**
  * Created by sala01 on 15/05/2017.
  */
 
-public class RadomUserTask extends AsyncTask<String, Object, List<Usuario>> {
+public class RadomUserTask extends AsyncTask<String, Object, List<Result>> {
 
     private RadomUserRetorno radomUserRetorno;
 
@@ -29,33 +24,12 @@ public class RadomUserTask extends AsyncTask<String, Object, List<Usuario>> {
     }
 
     @Override
-    protected List<Usuario> doInBackground(String... params) {
+    protected List<Result> doInBackground(String... params) {
         Comunicacao c = new Comunicacao();
         try {
-            List<Usuario> lista = new ArrayList<>();
-
             String json = c.get(params[0]);
-            JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
-            JsonArray array = jsonObject.getAsJsonArray("results");
-
-            for (JsonElement jsonElement : array) {
-                JsonObject usuario = (JsonObject) jsonElement;
-                JsonObject onome = usuario.getAsJsonObject("name");
-                JsonObject picture = usuario.getAsJsonObject("picture");
-                String urlImagem = picture.getAsJsonPrimitive("large").getAsString();
-
-                Usuario usuarioed = new Usuario();
-                usuarioed.setUsuario(onome.getAsJsonPrimitive("first").getAsString()  + " "+ onome.getAsJsonPrimitive("last").getAsString());
-                usuarioed.setLugar(usuario.getAsJsonObject("location").getAsJsonPrimitive("street").getAsString());
-                Bitmap bitmap = BitmapFactory.decodeStream(c.getInputStream(urlImagem));
-                usuarioed.setbImagemPessoa(bitmap);
-                usuarioed.setbImagemPrincipal(bitmap);
-
-
-                lista.add(usuarioed);
-            }
-
-            return lista;
+            RandomUsers randomUsers = new Gson().fromJson(json, RandomUsers.class);
+            return randomUsers.getResults();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,7 +38,7 @@ public class RadomUserTask extends AsyncTask<String, Object, List<Usuario>> {
     }
 
     @Override
-    protected void onPostExecute(List<Usuario> jsonArray) {
+    protected void onPostExecute(List<Result> jsonArray) {
         radomUserRetorno.returnoArray(jsonArray);
     }
 }

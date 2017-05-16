@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 
 import java.util.List;
 
+import target.aula.cursoandroid.ed.Result;
 import target.aula.cursoandroid.ed.Usuario;
 
 /**
@@ -13,6 +14,6 @@ import target.aula.cursoandroid.ed.Usuario;
 
 public interface RadomUserRetorno {
 
-    void returnoArray(List<Usuario> jsonArray);
+    void returnoArray(List<Result> jsonArray);
 
 }

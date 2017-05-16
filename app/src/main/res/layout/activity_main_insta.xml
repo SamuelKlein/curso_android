@@ -5,13 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="target.aula.cursoandroid.activity.MainInstaActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_conteiner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+    </FrameLayout>
+
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline"
         app:layout_constraintGuide_begin="50dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="50dp"
+        tools:layout_editor_absoluteY="49dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.ConstraintLayout

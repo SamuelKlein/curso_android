@@ -1,35 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="target.aula.cursoandroid">
+<?xml version="1.0" encoding="utf-8"?><manifest
+xmlns:android="http://schemas.android.com/apk/res/android" package="target.aula.cursoandroid">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+<application android:allowBackup="true" android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true" android:theme="@style/AppTheme">
 
+    <service android:name="target.aula.cursoandroid.service.AndroidServiceStartOnBoot" />
 
+    <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyB7Xxl3d4_Nk8z7PSsrJ-olsHMCpQ4-_RU" />
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ExemploInterface" />
-        <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.UsuarioActivity" />
-        <activity android:name=".activity.FacesActivity"></activity>
+    <receiver android:name="target.aula.cursoandroid.service.BroadcastReceiverOnBootComplete"
+        android:enabled="true" android:exported="false">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_REPLACED" />
+            <data android:scheme="package" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_ADDED" />
+            <data android:scheme="package" />
+        </intent-filter>
+    </receiver>
 
+    <activity android:name=".MainActivity" />
+    <activity android:name=".ExemploInterface">
 
+    </activity>
+    <activity android:name=".activity.LoginActivity"></activity>
+    <activity android:name=".activity.UsuarioActivity" />
+    <activity android:name=".activity.FacesActivity"></activity>
+    <activity android:name=".activity.MainInstaActivity"></activity>
+    <activity android:name=".activity.MapsActivity" android:label="@string/title_activity_maps">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".activity.MainInstaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
 
 </manifest>

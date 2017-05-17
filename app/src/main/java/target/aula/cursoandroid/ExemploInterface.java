@@ -1,10 +1,14 @@
 package target.aula.cursoandroid;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import target.aula.cursoandroid.service.AndroidServiceStartOnBoot;
 
 public class ExemploInterface extends AppCompatActivity {
 
@@ -27,6 +31,11 @@ public class ExemploInterface extends AppCompatActivity {
                   textView.setText("Q SACANAGEM" + (i++) );
               }
           });
+
+        if(!AndroidServiceStartOnBoot.isIniciado()) {
+            Intent serviceIntent = new Intent(this, AndroidServiceStartOnBoot.class);
+            startService(serviceIntent);
+        }
     }
 
 
